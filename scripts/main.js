@@ -1,13 +1,13 @@
 const BASE_URL = "https://www.gamerpower.com/api/giveaways"
-const main = document.querySelector("#game-giveaway-list")
+const main = document.getElementById("game-giveaway-list")
 
-window.addEventListener("load", getFreeGames() => {
+document.addEventListener("load", (event) => {
 	event.preventDefault()
 	fetch(BASE_URL)
 	.then(response => console.log(response))
 	.then(response => gameList(response))
 	.catch(error => displayError(error))
-}
+})
 
 
 const gameList = (response) => {
@@ -27,12 +27,8 @@ const gameList = (response) => {
 }
 
 const displayError = (error) => {
-	main.innerHTML = <div class="error"> 
-	<p>Our Apologies. There seem to be an error</p>
-	<p class="error-message">${error}</p>
-	</div>
+	alert("Our Apologies. There seem to be an error")
 }
-
 
 
 
