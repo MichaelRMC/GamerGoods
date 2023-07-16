@@ -1,60 +1,8 @@
-.sidenav {
-	height: 100%;
-	width: 0;
-	position: fixed;
-	z-index: 1;
-	top: 0;
-	left: 0;
-	background-color: #111;
-	overflow-x: hidden;
-	padding-top: 60px;
-	transition: 0.5s;
-
-
-	.sidenav a {
-		padding: 8px 8px 8px 32px;
-		text-decoration: none;
-		font-size: 25px;
-		color: #818181;
-		display: block;
-		transition: 0.3s;
-	}
-
-
-	.sidenav a:hover {
-		color: #f1f1f1;
-	}
-
-
-	.sidenav .closebtn {
-		position: absolute;
-		top: 0;
-		right: 25px;
-		font-size: 36px;
-		margin-left: 50px;
-	}
-
-
-	main {
-		transition: margin-left .5s;
-		padding: 20px;
-	}
-
-
-	@media screen and (max-height: 450px) {
-		.sidenav {
-			padding-top: 15px;
-		}
-
-		.sidenav a {
-			font-size: 18px;
-		}
-	}
-}
-
 html,
 body,
 .container {
+	font-family: 'Black Ops One', cursive;
+	background-image: url(../assets/carl-raw-m3hn2Kn5Bns-unsplash\ \(1\).jpg);
 	width: 100%;
 	height: 100%;
 	margin: 0;
@@ -72,20 +20,11 @@ body,
 
 .header {
 	grid-area: header;
-	background-color: lightblue;
+	background: #060938
 }
 
-.sidenav {
-	grid-area: sidenav;
-	background-color: pink;
-}
-
-.app-summary {
-	grid-area: content;
-	background-color: white;
-}
 
 .developer-bio {
-	grid-area: footer;
+	grid-area: developer-bio;
 	background-color: lightgray;
 }
