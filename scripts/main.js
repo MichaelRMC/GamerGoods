@@ -1,7 +1,7 @@
 const api =
   "https://newsapi.org/v2/everything?q=gaming&apiKey=8f1e6a243d7b47da88ee3c9589d37437";
 
-const main = document.querySelector("section");
+const main = document.querySelector(".main");
 
 window.addEventListener("load", (event) => {
   fetch(api)
@@ -11,7 +11,9 @@ window.addEventListener("load", (event) => {
 
 const gamingNews = (json) => {
   const articles = json.articles;
+  console.log(articles);
  for (const article of articles) {
+  console.log(article)
     main.innerHTML = `<div class="wrapper">
     <div class="card">
       <div class="card-banner">
@@ -31,7 +33,8 @@ const gamingNews = (json) => {
       </div>
     </div>`;
  }
-};
+}
+
 
 // const displayError = (error) => {
 // 	main.innerHTML = `<article id="error">

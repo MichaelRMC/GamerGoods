@@ -1,2 +1,2 @@
 # GamerGoods
-Your Exclusive Stop For Free Games and Game Giveaways Info
+Your News Fix For Everything Gaming
