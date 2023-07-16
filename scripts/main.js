@@ -1,36 +1,41 @@
-const BASE_URL = "https://www.gamerpower.com/api/giveaways"
-const main = document.getElementById("game-giveaway-list")
+const api =
+  "https://newsapi.org/v2/everything?q=gaming&apiKey=8f1e6a243d7b47da88ee3c9589d37437";
 
-document.addEventListener("load", (event) => {
-	event.preventDefault()
-	fetch(BASE_URL)
-	.then(response => console.log(response))
-	.then(response => gameList(response))
-	.catch(error => displayError(error))
-})
+const main = document.querySelector("section");
 
+window.addEventListener("load", (event) => {
+  fetch(api)
+    .then((data) => data.json())
+    .then((json) => gamingNews(json));
+});
 
-const gameList = (response) => {
-	main.innerHTML = `<article>
-	<img src="${json.image}">
-	<br>
-	<h3>${json.title}</h3>
-	<br>
-	<span class="description">${json.description}</span>
-	<br>
-	<span class="type">${json.type}</span>
-	<br>
-	<span class="platforms">${json.platforms}</span>
-	<br>
-	<span class="open-giveaway-url">${json.open_giveaway_url}</span>
-	 </article>`
-}
+const gamingNews = (json) => {
+  const articles = json.articles;
+ for (const article of articles) {
+    main.innerHTML = `<div class="wrapper">
+    <div class="card">
+      <div class="card-banner">
+        <p class="articles-source">${article.source.name}</p>
+        <img class="banner-img" src=${article.urlToImage} alt=''>
+      </div>
+      <div class="card-body">
+        <h2 class="articles-title">${article.title}</h2>
+        <p class="articles-description">${article.description}</p>
 
-const displayError = (error) => {
-	alert("Our Apologies. There seem to be an error")
-}
+        <div class="card-author">
+          <div class="card-author-info">
+            <h3 class="author-name">${article.author}</h3>
+            <p class="articles-url">${article.url}</p>
+          </div>
+        </div>
+      </div>
+    </div>`;
+ }
+};
 
-
-
-
-
+// const displayError = (error) => {
+// 	main.innerHTML = `<article id="error">
+// 	<span>We're Sorry. There seem to be an error</span>
+// 	<span class="error-message>${error}</span>
+// 	</article>`
+// }
