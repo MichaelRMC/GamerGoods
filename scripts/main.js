@@ -1,8 +1,8 @@
 const api =
-  "https://newsapi.org/v2/everything?q=gaming&apiKey=8f1e6a243d7b47da88ee3c9589d37437";
+  "https://newsapi.org/v2/everything?q=gaming&pageSize=20&apiKey=8f1e6a243d7b47da88ee3c9589d37437";
 
 const main = document.querySelector(".main");
-const link = document.querySelector(".button");
+const search = document.querySelector("submit");
 
 window.addEventListener("load", (event) => {
   fetch(api)
